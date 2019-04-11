@@ -40,14 +40,7 @@ public class CheckingShowMoreButtonTest extends BaseTest {
 
             Assert.assertTrue(bufListProjects.size( ) < listProjects.size( ));
 
-            /**
-             *
-             *
-             *
-             *
-             * что-то тут
-             *
-             */
+
         }
     }
 }
