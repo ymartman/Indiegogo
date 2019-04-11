@@ -35,6 +35,7 @@ public class CheckingShowMoreButtonTest extends BaseTest {
             new WebDriverWait(DriverManager.currentDriver(), 10)
                     .until(ExpectedConditions.visibilityOfAllElements(bufListProjects));
 
+
             listProjects = explorePageLogic.get( ).getCard( ).findElements(By.xpath(("//div[contains(@class, 'discoverableCard-title')]")));
 
             Assert.assertTrue(bufListProjects.size( ) < listProjects.size( ));
