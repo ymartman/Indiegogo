@@ -8,6 +8,7 @@ public class DriverFactory {
 
 
     public static WebDriver createDriver(String nameOfDriver) {
+        //Всегда устанавливается путь ко всем драйверам, если версия драйвера поменяется или у двух разработчкиков разные версии хрома будут проблемы
         System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver73.exe");
         System.setProperty("webdriver.gecko.driver", "drivers\\geckodriver.exe");
 
@@ -19,35 +20,4 @@ public class DriverFactory {
         }
         return null;
     }
-
-//
-//
-//       protected static DriverFactory driverFactory;
-//
-//
-//          protected synchronized static DriverFactory getInstance(){
-//              if (driverFactory == null){
-//                  driverFactory = new DriverFactory();
-//              }
-//              return driverFactory;
-//          }
-//
-//          protected WebDriver driver;
-//
-//          public synchronized static WebDriver currentDriver(String nameOfDriver){
-//              return getInstance().getDriver(nameOfDriver);
-//          }
-//
-//          protected synchronized WebDriver getDriver(String nameOfDriver){
-//              System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver73.exe");
-//              System.setProperty("webdriver.gecko.driver", "drivers\\geckodriver.exe");
-//              if (driver == null){
-//                  if (nameOfDriver.matches(DriverName.Chrome))
-//                      driver = new ChromeDriver();
-//                  if (nameOfDriver.matches(DriverName.FireFox))
-//                      driver = new FirefoxDriver();
-//              }
-//              return driver;
-//          }
-
 }
