@@ -39,8 +39,6 @@ public class CheckingShowMoreButtonTest extends BaseTest {
             listProjects = explorePageLogic.get( ).getCard( ).findElements(By.xpath(("//div[contains(@class, 'discoverableCard-title')]")));
 
             Assert.assertTrue(bufListProjects.size( ) < listProjects.size( ));
-
-
         }
     }
 }
