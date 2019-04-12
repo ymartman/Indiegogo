@@ -14,10 +14,10 @@ public class ExplorePage extends BasePage {
     private WebElement card;
 
     @FindBy(xpath = "//div[@class='exploreMore']//a[contains(text(), 'show more')]")
-    WebElement showMoreResults;
+    private WebElement showMoreResults;
 
     @FindBy(xpath = "//div[@class='exploreMore']//a[contains(text(), 'View All Trending')]")
-    WebElement viewAllTrinding;
+    private WebElement viewAllTrinding;
 
     @FindBy(xpath = "//div[contains(@class, 'discoverableCard-title')]")
     private List<WebElement> listProject;
