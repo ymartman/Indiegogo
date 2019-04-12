@@ -42,6 +42,7 @@ public class FeaturedProjectsTest extends BaseTest {
     }
 
 
+    //Тоже не должно быть в тестах
     public boolean contains(ArrayList<FeaturedProject> projectsList, FeaturedProject bufFeaturedProject){
         boolean flag = false;
         for (FeaturedProject featuredProject : projectsList){
@@ -64,11 +65,13 @@ public class FeaturedProjectsTest extends BaseTest {
         return flag;
     }
 
+    //Вытащить в MainPageLogic
     public ArrayList<FeaturedProject> getListOfFeaturedProjects(MainPageLogic mainPageLogic){
 
         ArrayList<FeaturedProject> arrayList = new ArrayList<FeaturedProject>();
         int arrowIndex = 0;
 
+        //Локаторы в тестах зло
         for ( String number : mainPageLogic.get().getArrowIndex().getText().split("/", 2)) {
            arrowIndex = Integer.parseInt(number.trim());
         }
@@ -76,9 +79,11 @@ public class FeaturedProjectsTest extends BaseTest {
         for (int i = 0; i < arrowIndex; i++){
             FeaturedProject featuredProject = new FeaturedProject();
 
+            //Вытащить во view (Page object)
             String headLine = mainPageLogic.get().getFeaturedProjectsDescription().findElement(By.cssSelector(".featuredProject-headline")).getText();
             featuredProject.setFeaturedProjectHeadline(headLine);
 
+            //Вытащить во view (Page object)
             String tagLine = mainPageLogic.get().getFeaturedProjectsDescription().findElement(By.cssSelector(".featuredProject-tagline")).getText();
             featuredProject.setFeaturedProjectTagLine(tagLine);
 
