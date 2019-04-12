@@ -22,21 +22,19 @@ public class CheckingShowMoreButtonTest extends BaseTest {
 
         ExplorePageLogic explorePageLogic = mainPageLogic.findInformation(informationTwo);
 
-
         List<WebElement> listProjects;
         List<WebElement> bufListProjects;
 
         while(explorePageLogic.get().getShowMoreResults().isDisplayed() && !explorePageLogic.get().getViewAllTrinding().isDisplayed()) {
 
-            bufListProjects = explorePageLogic.get().getCard().findElements(By.xpath(("//div[contains(@class, 'discoverableCard-title')]")));
+            bufListProjects = explorePageLogic.get().getListProject();
 
             explorePageLogic.get( ).getShowMoreResults( ).click();
 
             new WebDriverWait(DriverManager.currentDriver(), 10)
                     .until(ExpectedConditions.visibilityOfAllElements(bufListProjects));
 
-
-            listProjects = explorePageLogic.get( ).getCard( ).findElements(By.xpath(("//div[contains(@class, 'discoverableCard-title')]")));
+            listProjects = explorePageLogic.get( ).getListProject();
 
             Assert.assertTrue(bufListProjects.size( ) < listProjects.size( ));
         }
